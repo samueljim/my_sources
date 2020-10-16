@@ -53,11 +53,11 @@
          <main id="main" class="site-main" role="main">
             <div class="post-left-column">
                <div class="share-btns__list share-btns__list-single-page ">
-				  <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php?u=<script>document.write(window.location.href)</script>&amp;t={post.title}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
+				  <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php?t={post.title}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
                   <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://twitter.com/intent/tweet?url=<script>document.write(window.location.href)</script>&amp;text={post.title}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
                   <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://plus.google.com/share?url=<script>document.write(window.location.href)</script>" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
                   <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<script>document.write(window.location.href)</script>&amp;title={post.title}&amp;summary=When people tell me that our President has delivered his 7th State of the Union speech recently, I always correct their mistake and tell it was eighth, in fact. On February 24, 2009, the start of Barack Obama’s 2nd month in office, he made an extensive speech on then ongoing Great Recession crisis. He tried [&amp;hellip;]&amp;source=<script>document.write(window.location.href)</script>" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
-                  <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=<script>document.write(window.location.href)</script>&amp;description={post.title}&amp;media=https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker.jpg" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
+                  <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=<script>document.write(window.location.href)</script>&amp;description={post.title}&amp;" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
                </div>
             </div>
             <div class="post-right-column">
@@ -66,13 +66,13 @@
                      <div class="post__cats"><a href="/{post.category.toLowerCase()}" rel="category tag">{post.category}</a></div>
                      <h1 class="entry-title">{post.title}</h1>
                      <div class="entry-meta">
-                        <span class="post-author">By <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="<script>document.write(window.location.href)</script>">5 years ago</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="<script>document.write(window.location.href)</script>#comments" class="post-comments__link" >3</a></span>
+                        <span class="post-author">By <a class="post-author__link" href="/">{post.author || 'David'}</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/">2 weeks ago</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="#comments" class="post-comments__link" >3</a></span>
                      </div>
                      <!-- .entry-meta -->
                   </header>
                   <!-- .entry-header -->
                   <figure class="post-thumbnail">
-                     <img width="1170" height="780" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker-1170x780.jpg" class="post-thumbnail__img wp-post-image" alt="If Obama Had Ruled Like This" />	
+                     <img width="1170" height="780" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="hero image" />	
                   </figure>
                   <!-- .post-thumbnail -->
                   <div class="entry-content">
@@ -87,8 +87,8 @@
                <!-- #post-## -->
                <div class="post-author-bio invert">
                   <div class="post-author__holder clear">
-                     <div class="post-author__avatar"><img alt='admin' src='https://secure.gravatar.com/avatar/265f1e197614170f408cd8c14faa3302?s=140&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/265f1e197614170f408cd8c14faa3302?s=280&amp;d=mm&amp;r=g 2x' class='avatar avatar-140 photo' height='140' width='140' /></div>
-                     <h4 class="post-author__title">Written by <a href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/" title="Posts by admin" rel="author">admin</a></h4>
+                     <div class="post-author__avatar"><img alt='{post.author}' src='https://secure.gravatar.com/avatar/265f1e197614170f408cd8c14faa3302?s=140&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/265f1e197614170f408cd8c14faa3302?s=280&amp;d=mm&amp;r=g 2x' class='avatar avatar-140 photo' height='140' width='140' /></div>
+                     <h4 class="post-author__title">Written by <a href="/" title="Posts by {post.author}" rel="author">{post.author}</a></h4>
                      <div class="post-author__content"></div>
                   </div>
                </div>
@@ -407,7 +407,7 @@
                <h4 class="widget-title">Get latest news delivered daily!</h4>
                <div class="subscribe-block__message">We will send you breaking news right to your inbox</div>
                <form method="POST" action="" class="subscribe-block__form">
-                  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="c7bd9d9868" /><input type="hidden" name="_wp_http_referer" value="/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for/" />
+                  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="c7bd9d9868" /><input type="hidden" name="_wp_http_referer" value="/todo" />
                   <div class="subscribe-block__input-group"><input class="subscribe-block__input" type="email" name="subscribe-mail" value="" placeholder="Your e-mail"><a href="#" class="subscribe-block__submit btn">Subscribe</a></div>
                   <div class="subscribe-block__messages">
                      <div class="subscribe-block__success hidden">You successfully subscribed</div>
@@ -431,15 +431,15 @@
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
-                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/"><i class="material-icons dp18">access_time</i>5 years ago</a>
+                                 <span class="post-author">by <a class="post-author__link" href="/">{post.author}</a></span>   <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/"><i class="material-icons dp18">access_time</i>2 hours ago</a>
                               </div>
                               <div class="share-btns-main">
                                  <div class="share-btns__list ">
-                                    <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php?u=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;t=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
+                                    <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
                                     <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://twitter.com/intent/tweet?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;text=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
                                     <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://plus.google.com/share?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
-                                    <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;title=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves&amp;summary=When people tell me that our President has delivered his 7th State of the Union speech recently, I always correct their mistake and tell it was eighth, in fact. On February 24, 2009, the start of Barack Obama’s 2nd month in office, he made an extensive speech on then ongoing Great Recession crisis. He tried [&amp;hellip;]&amp;source=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
-                                    <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;description=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves&amp;media=https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ap-trump-carson-cruz.jpg" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
+                                    <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;title=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves&amp;" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
+                                    <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/&amp;description=Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves&amp;" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
                                  </div>
                                  <i class="material-icons share-main-icon">share</i>
                               </div>
@@ -460,7 +460,7 @@
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
-                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/quote-post/"><i class="material-icons dp18">access_time</i>5 years ago</a>
+                                 <span class="post-author">by <a class="post-author__link" href="/">Julia H. Shaffer</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/quote-post/"><i class="material-icons dp18">access_time</i>3 hours ago</a>
                               </div>
                               <div class="share-btns-main">
                                  <div class="share-btns__list ">
@@ -489,7 +489,7 @@
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
-                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><i class="material-icons dp18">access_time</i>5 years ago</a>
+                                 <span class="post-author">by <a class="post-author__link" href="/">Sharon T. Castaneda</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><i class="material-icons dp18">access_time</i>1 day ago</a>
                               </div>
                               <div class="share-btns-main">
                                  <div class="share-btns__list ">
@@ -518,7 +518,7 @@
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
-                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><i class="material-icons dp18">access_time</i>5 years ago</a>
+                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><i class="material-icons dp18">access_time</i>2 years ago</a>
                               </div>
                               <div class="share-btns-main">
                                  <div class="share-btns__list ">
@@ -540,9 +540,9 @@
          <aside id="recent-comments-2" class="widget widget_recent_comments">
             <h4 class="widget-title">Recent comments</h4>
             <ul id="recentcomments">
-               <li class="recentcomments"><span class="comment-author-link">admin</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/#comment-69">Among 1M refugees, Berlin accepted ISIS terrorists</a></li>
-               <li class="recentcomments"><span class="comment-author-link">admin</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/#comment-68">Terrorism concerns get UK tourists opting in to &#8216;lighter&#8217; holiday spots</a></li>
-               <li class="recentcomments"><span class="comment-author-link">admin</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-18/#comment-67">If Obama Had Ruled Like This in 2009, He&#8217;d Be the Reforming President We All Hoped For</a></li>
+               <li class="recentcomments"><span class="comment-author-link">John Shaw</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/#comment-69">Among 1M refugees, Berlin accepted ISIS terrorists</a></li>
+               <li class="recentcomments"><span class="comment-author-link">David C. Buckland</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/#comment-68">Terrorism concerns get UK tourists opting in to &#8216;lighter&#8217; holiday spots</a></li>
+               <li class="recentcomments"><span class="comment-author-link">Robert Gaspard</span> on <a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-18/#comment-67">If Obama Had Ruled Like This in 2009, He&#8217;d Be the Reforming President We All Hoped For</a></li>
             </ul>
          </aside>
          <aside id="widget-easy-twitter-feed-widget-kamn-2" class="widget widget-easy-twitter-feed-widget-kamn">
