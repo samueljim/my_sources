@@ -12,6 +12,7 @@ const posts = [
 	title: 'What is a meme?',
 	category: 'Politics',
 	author: 'David Dickson',
+	description: 'more detial here',
 	image: "https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker-1170x780.jpg",
 	slug: 'what-is-a-meme',
     html: `

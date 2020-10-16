@@ -23,6 +23,18 @@
 
 <svelte:head>
 	<title>{post.title}</title>
+	<meta name="title" content="{post.title}">
+	<meta name="description" content="{post.description}">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="{post.description}">
+	<meta property="og:image" content="{post.image}">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:description" content="{post.description}">
+	<meta property="twitter:image" content="{post.image}">
 </svelte:head>
 <div id="content" class="site-content container">
 <div class="breadcrumbs">
@@ -66,13 +78,13 @@
                      <div class="post__cats"><a href="/{post.category.toLowerCase()}" rel="category tag">{post.category}</a></div>
                      <h1 class="entry-title">{post.title}</h1>
                      <div class="entry-meta">
-                        <span class="post-author">By <a class="post-author__link" href="/">{post.author || 'David'}</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/">2 weeks ago</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="#comments" class="post-comments__link" >3</a></span>
+                        <span class="post-author">By <a class="post-author__link" href="/">{post.author || 'David'}</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/">1 week ago</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="#comments" class="post-comments__link" >3</a></span>
                      </div>
                      <!-- .entry-meta -->
                   </header>
                   <!-- .entry-header -->
                   <figure class="post-thumbnail">
-                     <img width="1170" height="780" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="hero image" />	
+                     <img width="1170" height="780" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="hero" />	
                   </figure>
                   <!-- .post-thumbnail -->
                   <div class="entry-content">
@@ -408,7 +420,7 @@
                <div class="subscribe-block__message">We will send you breaking news right to your inbox</div>
                <form method="POST" action="" class="subscribe-block__form">
                   <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="c7bd9d9868" /><input type="hidden" name="_wp_http_referer" value="/todo" />
-                  <div class="subscribe-block__input-group"><input class="subscribe-block__input" type="email" name="subscribe-mail" value="" placeholder="Your e-mail"><a href="#" class="subscribe-block__submit btn">Subscribe</a></div>
+                  <div class="subscribe-block__input-group"><input class="subscribe-block__input" type="email" name="subscribe-mail" value="" placeholder="Your e-mail"><a href="/subscribe" class="subscribe-block__submit btn">Subscribe</a></div>
                   <div class="subscribe-block__messages">
                      <div class="subscribe-block__success hidden">You successfully subscribed</div>
                      <div class="subscribe-block__error hidden"></div>
