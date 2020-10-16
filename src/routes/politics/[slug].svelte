@@ -2,7 +2,7 @@
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await this.fetch(`story/${params.slug}.json`);
+		const res = await this.fetch(`politics/${params.slug}.json`);
 		const data = await res.json();
 
 		if (res.status === 200) {
@@ -468,7 +468,7 @@
                         <div></div>
                         <div class="widget-image-grid__content-2">
                            <h3 class="widget-image-grid__title">
-                              <a href="https://ld-wp.template-help.com/wordpress_58404_v4/quote-post/">Quote post</a>
+                              <a href="https://ld-wp.template-help.com/wordpress_58404_v4/quote-post/">David Cameron is not done with politics</a>
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
@@ -580,7 +580,7 @@
             <h4 class="widget-title">Calendar</h4>
             <div id="calendar_wrap" class="calendar_wrap">
                <table id="wp-calendar">
-                  <caption>September 2020</caption>
+                  <caption>October 2020</caption>
                   <thead>
                      <tr>
                         <th scope="col" title="Monday">M</th>
