@@ -27,7 +27,7 @@
 		all elements inside .content
 	*/
 	.content :global(h2) {
-		font-size: 1.4em;
+		font-size: 4em;
 		font-weight: 500;
 	}
 
