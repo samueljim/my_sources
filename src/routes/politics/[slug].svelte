@@ -25,7 +25,7 @@
 	<title>{post.title}</title>
 	<meta name="title" content="{post.title}">
 	<meta name="description" content="{post.description}">
-	<meta name="keywords" content="{post.tags}">
+	<meta name="keywords" content="{post.tags ? post.tags.join(',') : 'news'}">
    <meta name="author" content="{post.author}">
 
 	<!-- Open Graph / Facebook -->
@@ -71,10 +71,10 @@
             <div class="post-left-column">
                <div class="share-btns__list share-btns__list-single-page ">
 				  <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php?t={post.title}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
-                  <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://twitter.com/intent/tweet?url=<script>document.write(window.location.href)</script>&amp;text={post.title}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
-                  <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://plus.google.com/share?url=<script>document.write(window.location.href)</script>" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
-                  <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<script>document.write(window.location.href)</script>&amp;title={post.title}&amp;summary=When people tell me that our President has delivered his 7th State of the Union speech recently, I always correct their mistake and tell it was eighth, in fact. On February 24, 2009, the start of Barack Obama’s 2nd month in office, he made an extensive speech on then ongoing Great Recession crisis. He tried [&amp;hellip;]&amp;source=<script>document.write(window.location.href)</script>" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
-                  <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=<script>document.write(window.location.href)</script>&amp;description={post.title}&amp;" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
+                  <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://twitter.com/intent/tweet" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
+                  <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://plus.google.com/share?" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
+                  <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
+                  <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
                </div>
             </div>
             <div class="post-right-column">

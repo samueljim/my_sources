@@ -16,6 +16,10 @@
 		margin-top: 5px;
 	}
 	}
+	@media (min-width: 992px) {
+.post-body-right {
+    margin-top: 5px;
+}}
 </style>
 
 <svelte:head>
@@ -62,7 +66,7 @@
 						 <!-- .post-thumbnail -->
 						 <div class="post-body-right">
 							<header class="entry-header">
-							   <h5 class="entry-title"><a href="/politics/{post.slug}" rel="bookmark">{post.title}</a></h5>
+							   <h5 class="entry-title"><a href="/politics/{post.slug}" rel="bookmark">{post.title || ''}</a></h5>
 							</header>
 							<!-- .entry-header -->
 							<div class="entry-content">

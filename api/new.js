@@ -1,7 +1,26 @@
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.mongo;
+var faker = require('faker');
 
 let cachedDb = null
+
+function string_to_slug (str) {
+    str = str.replace(/^\s+|\s+$/g, ''); // trim
+    str = str.toLowerCase();
+  
+    // remove accents, swap ñ for n, etc
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to   = "aaaaeeeeiiiioooouuuunc------";
+    for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+    }
+
+    str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+    return str;
+}
 
 // A function for connecting to MongoDB,
 // taking a single paramater of the connection string
@@ -23,9 +42,51 @@ async function connectToDatabase(uri) {
 	return db
 }
 
-module.exports = (req, res) => {
-    const { title } = req.body
+module.exports = async (req, res) => {
+    console.log('runs')
+    let d = new Date()
+    let iso = d.toISOString()
+    const { title, category } = JSON.parse(JSON.stringify(req.body))
+    console.log(title)
+    if (title && category) {
+        if (title.length > 10 && title.length < 400 && category.length > 1) {
+            var randomName = faker.name.findName();
+            const myobj = {
+                title: title,
+                slug: string_to_slug(title),
+                category: category,
+                author: randomName,
+                date: iso,
+                image: "https://picsum.photos/300/180"
+            }
 
+            var db = await connectToDatabase(url);
+        
+            var collection = await db.collection('sources')
+         
+            collection.findOne({"slug": myobj.slug}, function(err, doc) {
+                if (err) throw err;
 
-    res.status(200).send(`Page will be created soon`)
+                if (!doc || doc.length === 0) {
+                    collection.insertOne(myobj, function(err, res) {
+                        if (err) {
+                            res.status(500).send(`Error making page`); 
+                        } else {
+                            res.status(200).send(`Page will be created soon. Please wait and the page will show up once we make it`)
+                        }
+                        db.close();
+                    });
+                } else {
+                    res.status(500).send(`This page already exists`); 
+                }
+               
+              });
+
+          
+        } else {
+            res.status(500).send(`Please send a title and category`);
+        }
+    } else {
+        res.status(500).send(`Please send a title and category`);
+    }
 }
