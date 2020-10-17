@@ -13,6 +13,7 @@ const posts = [
 	category: 'Politics',
 	author: 'David Dickson',
 	description: 'more detial here',
+	date: '2020-10-17T07:30:33+0000',
 	image: "https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker-1170x780.jpg",
 	slug: 'what-is-a-meme',
     html: `
@@ -24,7 +25,7 @@ const posts = [
 		`,
   },
   {
-	title: 'What is a name?',
+	title: 'test',
 	category: 'Politics',
 	author: 'David Dickson',
 	description: 'more detial here',

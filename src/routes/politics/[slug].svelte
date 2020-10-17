@@ -36,6 +36,7 @@
 	<meta property="twitter:description" content="{post.description}">
 	<meta property="twitter:image" content="{post.image}">
 </svelte:head>
+
 <div id="content" class="site-content container">
 <div class="breadcrumbs">
    <div class="container--">
@@ -47,7 +48,7 @@
                <div class="breadcrumbs__item">
                   <div class="breadcrumbs__item-sep">&#47;</div>
                </div>
-               <div class="breadcrumbs__item"><a href="/{post.category.toLowerCase()}" class="breadcrumbs__item-link" rel="tag" title="{post.category}">{post.category}</a></div>
+               <div class="breadcrumbs__item"><a href="/{post.category ? post.category.toLowerCase() : '' }" class="breadcrumbs__item-link" rel="tag" title="{post.category}">{post.category}</a></div>
                <div class="breadcrumbs__item">
                   <div class="breadcrumbs__item-sep">&#47;</div>
                </div>
@@ -75,10 +76,10 @@
             <div class="post-right-column">
                <article id="post-1818" class="post-1818 post type-post status-publish format-standard has-post-thumbnail hentry category-sports tag-sports has-thumb">
                   <header class="entry-header">
-                     <div class="post__cats"><a href="/{post.category.toLowerCase()}" rel="category tag">{post.category}</a></div>
+                     <div class="post__cats"><a href="/{post.category ? post.category.toLowerCase() : '' }" rel="category tag">{post.category}</a></div>
                      <h1 class="entry-title">{post.title}</h1>
                      <div class="entry-meta">
-                        <span class="post-author">By <a class="post-author__link" href="/">{post.author || 'David'}</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/">1 week ago</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="#comments" class="post-comments__link" >3</a></span>
+                        <span class="post-author">By <a class="post-author__link" href="/">{post.author || 'David'}</a></span><span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/">{post.date}</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i><a href="#comments" class="post-comments__link" >3</a></span>
                      </div>
                      <!-- .entry-meta -->
                   </header>
@@ -92,7 +93,7 @@
                   </div>
                   <!-- .entry-content -->
                   <footer class="entry-footer"> 
-                     <div class="post__tags"><i class="material-icons">folder_open</i>Tagged in: <a href="/{post.category.toLowerCase()}" rel="tag">{post.category}</a></div>
+                     <div class="post__tags"><i class="material-icons">folder_open</i>Tagged in: <a href="/{post.category ? post.category.toLowerCase() : '' }" rel="tag">{post.category}</a></div>
                   </footer>
                   <!-- .entry-footer -->
                </article>
@@ -530,15 +531,15 @@
                            </h3>
                            <div class="widget-image-grid__footer">
                               <div class="widget-image-grid__footer-meta">
-                                 <span class="post-author">by <a class="post-author__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/author/admin/">admin</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><i class="material-icons dp18">access_time</i>2 years ago</a>
+                                 <span class="post-author">by <a class="post-author__link" href="/">{post.author}</a></span>            <a class="widget-image-grid__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><i class="material-icons dp18">access_time</i>2 years ago</a>
                               </div>
                               <div class="share-btns-main">
                                  <div class="share-btns__list ">
-                                    <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.facebook.com/sharer/sharer.php?u=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/&amp;t=Iran nuclear deal makes country so much richer" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
-                                    <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://twitter.com/intent/tweet?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/&amp;text=Iran nuclear deal makes country so much richer" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
-                                    <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://plus.google.com/share?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
-                                    <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/&amp;title=Iran nuclear deal makes country so much richer&amp;summary=When people tell me that our President has delivered his 7th State of the Union speech recently, I always correct their mistake and tell it was eighth, in fact. On February 24, 2009, the start of Barack Obama’s 2nd month in office, he made an extensive speech on then ongoing Great Recession crisis. He tried [&amp;hellip;]&amp;source=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
-                                    <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.pinterest.com/pin/create/button/?url=https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/&amp;description=Iran nuclear deal makes country so much richer&amp;media=https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program.jpg" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
+                                    <div class="share-btns__item facebook-item"><a class="share-btns__link" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i><span class="share-btns__label screen-reader-text">Facebook</span></a></div>
+                                    <div class="share-btns__item twitter-item"><a class="share-btns__link" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i><span class="share-btns__label screen-reader-text">Twitter</span></a></div>
+                                    <div class="share-btns__item google-plus-item"><a class="share-btns__link" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="nofollow" target="_blank" title="Share on Google+"><i class="fa fa-google-plus"></i><span class="share-btns__label screen-reader-text">Google+</span></a></div>
+                                    <div class="share-btns__item linkedin-item"><a class="share-btns__link" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="nofollow" target="_blank" title="Share on LinkedIn"><i class="fa fa-linkedin"></i><span class="share-btns__label screen-reader-text">LinkedIn</span></a></div>
+                                    <div class="share-btns__item pinterest-item"><a class="share-btns__link" href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="nofollow" target="_blank" title="Share on Pinterest"><i class="fa fa-pinterest"></i><span class="share-btns__label screen-reader-text">Pinterest</span></a></div>
                                  </div>
                                  <i class="material-icons share-main-icon">share</i>
                               </div>

@@ -1,28 +1,73 @@
 import posts from './_posts.js';
+const moment = require('moment'); 
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb+srv://admin:uF8pZhQhraHJGu2Q@cluster0.vruoi.mongodb.net/news?retryWrites=true&w=majority";
 
-const lookup = new Map();
-posts.forEach(post => {
-	lookup.set(post.slug, JSON.stringify(post));
-});
+let cachedDb = null
 
-export function get(req, res, next) {
+// A function for connecting to MongoDB,
+// taking a single paramater of the connection string
+async function connectToDatabase(uri) {
+	// If the database connection is cached,
+	// use it instead of creating a new connection
+	if (cachedDb) {
+	  return cachedDb
+	}
+  
+	// If no connection is cached, create a new one
+	const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true  })
+  
+	// Select the database through the connection,
+	// using the database path of the connection string
+	const db = await client.db('news')
+  
+	// Cache the database connection and return the connection
+	cachedDb = db
+	return db
+}
+
+export async function get(req, res, next) {
 	// the `slug` parameter is available because
 	// this file is called [slug].json.js
 	const { slug } = req.params;
+	console.log(slug)
+	var db = await connectToDatabase(url)
 
-	if (lookup.has(slug)) {
-		res.writeHead(200, {
-			'Content-Type': 'application/json'
-		});
+	var collection = await db.collection('sources')
 
-		res.end(lookup.get(slug));
-	} else {
-		res.writeHead(404, {
-			'Content-Type': 'application/json'
-		});
+	collection.find({ "slug": slug }).toArray((err, result) => {
+		if (err) {
+			console.log(err)
+			res.writeHead(404, {
+				'Content-Type': 'application/json'
+			});
+	
+			res.end(JSON.stringify({
+				message: `Not found`
+			}));
+		} else {
+			console.log(result[0])
+			res.writeHead(200, {
+				'Content-Type': 'application/json'
+			});
+			result[0].date =  result[0].date ? moment(result[0].date).fromNow() : "2 hours ago"
+			res.end(JSON.stringify(result[0]));
+		}
+	})
 
-		res.end(JSON.stringify({
-			message: `Not found`
-		}));
-	}
+	// if (lookup.has(slug)) {
+	// 	res.writeHead(200, {
+	// 		'Content-Type': 'application/json'
+	// 	});
+
+	// 	res.end(lookup.get(slug));
+	// } else {
+	// 	res.writeHead(404, {
+	// 		'Content-Type': 'application/json'
+	// 	});
+
+	// 	res.end(JSON.stringify({
+	// 		message: `Not found`
+	// 	}));
+	// }
 }
