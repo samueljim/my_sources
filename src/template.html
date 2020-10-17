@@ -695,10 +695,18 @@
 			<div class="header-container_wrap container">
 				<div class="header-container_inner">
 					<div class="site-branding">
-						<div class="site-logo"><a class="site-logo__link" href="/" rel="home"><img
-									src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/themes/king-news/assets/images/logo.png"
-									alt="King news" class="site-link__img"
-									srcset="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/logo.png 2x"></a>
+						<style>
+							.site-logo__link {
+								background-image: url(https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/themes/king-news/assets/images/logo.png);
+								background-repeat: no-repeat;
+								background-size: 100% 100%;
+								height: 64px;
+								display: block;
+								width: 250px;
+							}
+
+						</style>
+						<div class="site-logo"><a class="site-logo__link" href="/" rel="home"></a>
 						</div>
 					</div>
 					<nav id="site-navigation" class="main-navigation" role="navigation">

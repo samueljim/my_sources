@@ -1,4 +1,3 @@
-import posts from './_posts.js';
 const moment = require('moment'); 
 const MongoClient = require('mongodb').MongoClient;
 const url = "mongodb+srv://admin:uF8pZhQhraHJGu2Q@cluster0.vruoi.mongodb.net/news?retryWrites=true&w=majority";
@@ -31,6 +30,7 @@ export async function get(req, res, next) {
 	// this file is called [slug].json.js
 	const { slug } = req.params;
 	console.log(slug)
+
 	var db = await connectToDatabase(url)
 
 	var collection = await db.collection('sources')
@@ -46,7 +46,6 @@ export async function get(req, res, next) {
 				message: `Not found`
 			}));
 		} else {
-			console.log(result[0])
 			res.writeHead(200, {
 				'Content-Type': 'application/json'
 			});

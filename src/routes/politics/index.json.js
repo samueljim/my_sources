@@ -40,7 +40,6 @@ export async function get(req, res) {
         message: `Not found`
       }));
     } else {
-      console.log(result)
       res.writeHead(200, {
         'Content-Type': 'application/json'
       });
