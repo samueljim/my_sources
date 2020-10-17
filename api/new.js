@@ -72,7 +72,8 @@ module.exports = async (req, res) => {
                         if (err) {
                             res.status(500).send(`Error making page`); 
                         } else {
-                            res.status(200).send(`Page will be created soon. Please wait and the page will show up once we make it`)
+                            res.status(500).send(`Page will be made shortly`); 
+                            // res.redirect('https://sources.now.sh/thanks');
                         }
                         db.close();
                     });

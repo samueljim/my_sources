@@ -2,7 +2,7 @@
 	<title>About</title>
 </svelte:head>
 <style>
-select {
+#category {
 	    padding: 14px 20px;
     border: 1px solid #d2d1d1;
     background-color: #efefef;
@@ -10,11 +10,12 @@ select {
     font-size: 14px;
     width: 100%;
 }
-	[value="Submit"] {
+ .submit-btn {
 		margin-top: 20px;
 	}
 </style>
 <div id="content" class="site-content container" enctype='application/json'>
+	<h3>Give us a headline to write about</h3>
 	<form action="/api/new" method="post">
 	<label for="title">Title:</label>
 	<input type="text" id="title" name="title"><br><br>
@@ -27,6 +28,7 @@ select {
 		<option value="Tech">Tech</option>
 		<option value="World">World news</option>
 	</select>
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit" class='submit-btn'>
 	</form>
 </div>
+<a href="/thanks">.</a>

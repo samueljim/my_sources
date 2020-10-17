@@ -45,6 +45,7 @@ async function connectToDatabase(uri) {
 // The main, exported, function of the endpoint,
 // dealing with the request and subsequent response
 module.exports = async (req, res) => {
+    
     // Get a database connection, cached or otherwise,
     // using the connection string environment variable as the argument
     var db = await connectToDatabase(process.env.MONGO_URL || url)

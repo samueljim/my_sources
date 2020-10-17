@@ -1,6 +1,6 @@
 <script context="module">
 	export function preload({ params, query }) {
-		return this.fetch(`politics.json`).then(r => r.json()).then(posts => {
+		return this.fetch(`business.json`).then(r => r.json()).then(posts => {
 			return { posts };
 		});
 	}
@@ -23,7 +23,7 @@
 </style>
 
 <svelte:head>
-	<title>Politics news</title>
+	<title>Business news</title>
 </svelte:head>
 
 
@@ -38,7 +38,7 @@
 				   <div class="breadcrumbs__item">
 					  <div class="breadcrumbs__item-sep">/</div>
 				   </div>
-				   <div class="breadcrumbs__item"><span class="breadcrumbs__item-target">Politics</span></div>
+				   <div class="breadcrumbs__item"><span class="breadcrumbs__item-target">Business</span></div>
 				</div>
 			 </div>
 		  </div>
@@ -51,22 +51,22 @@
 		  <div id="primary" class="col-xs-12 col-md-8">
 			 <main id="main" class="site-main" role="main">
 				<header class="page-header">
-				   <h1 class="page-title screen-reader-text">Category: Politics</h1>
+				   <h1 class="page-title screen-reader-text">Category: Business</h1>
 				</header>
 				<!-- .page-header -->
-				<h2 class="title-line archive-title">Politics</h2>
+				<h2 class="title-line archive-title">Business</h2>
 				<div class="posts-list posts-list--minimal one-right-sidebar ultra-small">
 				   {#each posts as post}
-				   <article class="posts-list__item card post-1849 post type-post status-publish format-standard has-post-thumbnail hentry category-politics category-tech tag-tech has-thumb">
+				   <article class="posts-list__item card post-1849 post type-post status-publish format-standard has-post-thumbnail hentry category-business category-tech tag-tech has-thumb">
 					  <div class="post-list__item-content">
 						 <figure class="post-thumbnail post-thumbnail--ultra-small ">
-							<a href="/politics/{post.slug}" class="post-thumbnail__link post-thumbnail--ultra-small"><img width="150" height="115" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="{post.title}">				
-							<div class="post__cats"><a href="/politics" rel="category tag">Politics</a></div>
+							<a href="/business/{post.slug}" class="post-thumbnail__link post-thumbnail--ultra-small"><img width="150" height="115" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="{post.title}">				
+							<div class="post__cats"><a href="/business" rel="category tag">Business</a></div>
 						 </figure>
 						 <!-- .post-thumbnail -->
 						 <div class="post-body-right">
 							<header class="entry-header">
-							   <h5 class="entry-title"><a href="/politics/{post.slug}" rel="bookmark">{post.title || ''}</a></h5>
+							   <h5 class="entry-title"><a href="/business/{post.slug}" rel="bookmark">{post.title || ''}</a></h5>
 							</header>
 							<!-- .entry-header -->
 							<div class="entry-content">
@@ -76,7 +76,7 @@
 							<div class="entry-meta-sharing">
 							   <div class="entry-meta">
 								  <span class="post-author">by <a class="post-author__link" href="/">{post.author}</a></span>
-								  <span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/politics/{post.slug}">{post.date}</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i></span>					
+								  <span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/business/{post.slug}">{post.date}</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i></span>					
 							   </div>
 							   <!-- .entry-meta -->
 							   <div class="share-btns-main">
@@ -85,7 +85,7 @@
 							</div>
 							<!-- .entry-meta-sharing -->
 							<footer class="entry-footer">
-							   <a href="/politics" class="btn"><span class="btn__text">Read more</span><span class="btn__icon"></span></a>			
+							   <a href="/business" class="btn"><span class="btn__text">Read more</span><span class="btn__icon"></span></a>			
 							   <div class="share-btns-main">
 								  <i class="material-icons share-main-icon">share</i>
 							   </div>
@@ -311,7 +311,7 @@
 				   <h4 class="widget-title">Get latest news delivered daily!</h4>
 				   <div class="subscribe-block__message">We will send you breaking news right to your inbox</div>
 				   <form method="POST" action="" class="subscribe-block__form">
-					  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="2f2bd0c13b"><input type="hidden" name="_wp_http_referer" value="/wordpress_58404_v4/category/politics/">
+					  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="2f2bd0c13b"><input type="hidden" name="_wp_http_referer" value="/business/">
 					  <div class="subscribe-block__input-group"><input class="subscribe-block__input" type="email" name="subscribe-mail" value="" placeholder="Your e-mail"><a href="/" class="subscribe-block__submit btn">Subscribe</a></div>
 					  <div class="subscribe-block__messages">
 						 <div class="subscribe-block__success hidden">You successfully subscribed</div>

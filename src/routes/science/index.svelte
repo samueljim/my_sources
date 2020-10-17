@@ -1,6 +1,6 @@
 <script context="module">
 	export function preload({ params, query }) {
-		return this.fetch(`politics.json`).then(r => r.json()).then(posts => {
+		return this.fetch(`science.json`).then(r => r.json()).then(posts => {
 			return { posts };
 		});
 	}
@@ -23,7 +23,7 @@
 </style>
 
 <svelte:head>
-	<title>Politics news</title>
+	<title>Science news</title>
 </svelte:head>
 
 
@@ -38,7 +38,7 @@
 				   <div class="breadcrumbs__item">
 					  <div class="breadcrumbs__item-sep">/</div>
 				   </div>
-				   <div class="breadcrumbs__item"><span class="breadcrumbs__item-target">Politics</span></div>
+				   <div class="breadcrumbs__item"><span class="breadcrumbs__item-target">Science</span></div>
 				</div>
 			 </div>
 		  </div>
@@ -51,22 +51,22 @@
 		  <div id="primary" class="col-xs-12 col-md-8">
 			 <main id="main" class="site-main" role="main">
 				<header class="page-header">
-				   <h1 class="page-title screen-reader-text">Category: Politics</h1>
+				   <h1 class="page-title screen-reader-text">Category: Science</h1>
 				</header>
 				<!-- .page-header -->
-				<h2 class="title-line archive-title">Politics</h2>
+				<h2 class="title-line archive-title">Science</h2>
 				<div class="posts-list posts-list--minimal one-right-sidebar ultra-small">
 				   {#each posts as post}
-				   <article class="posts-list__item card post-1849 post type-post status-publish format-standard has-post-thumbnail hentry category-politics category-tech tag-tech has-thumb">
+				   <article class="posts-list__item card post-1849 post type-post status-publish format-standard has-post-thumbnail hentry category-science category-tech tag-tech has-thumb">
 					  <div class="post-list__item-content">
 						 <figure class="post-thumbnail post-thumbnail--ultra-small ">
-							<a href="/politics/{post.slug}" class="post-thumbnail__link post-thumbnail--ultra-small"><img width="150" height="115" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="{post.title}">				
-							<div class="post__cats"><a href="/politics" rel="category tag">Politics</a></div>
+							<a href="/science/{post.slug}" class="post-thumbnail__link post-thumbnail--ultra-small"><img width="150" height="115" src="{post.image}" class="post-thumbnail__img wp-post-image" alt="{post.title}">				
+							<div class="post__cats"><a href="/science" rel="category tag">Science</a></div>
 						 </figure>
 						 <!-- .post-thumbnail -->
 						 <div class="post-body-right">
 							<header class="entry-header">
-							   <h5 class="entry-title"><a href="/politics/{post.slug}" rel="bookmark">{post.title || ''}</a></h5>
+							   <h5 class="entry-title"><a href="/science/{post.slug}" rel="bookmark">{post.title || ''}</a></h5>
 							</header>
 							<!-- .entry-header -->
 							<div class="entry-content">
@@ -76,7 +76,7 @@
 							<div class="entry-meta-sharing">
 							   <div class="entry-meta">
 								  <span class="post-author">by <a class="post-author__link" href="/">{post.author}</a></span>
-								  <span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/politics/{post.slug}">{post.date}</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i></span>					
+								  <span class="post__date"><i class="material-icons">access_time</i><a class="post-date__link" href="/science/{post.slug}">{post.date}</a></span><span class="post__comments"><i class="material-icons">chat_bubble_outline</i></span>					
 							   </div>
 							   <!-- .entry-meta -->
 							   <div class="share-btns-main">
@@ -85,7 +85,7 @@
 							</div>
 							<!-- .entry-meta-sharing -->
 							<footer class="entry-footer">
-							   <a href="/politics" class="btn"><span class="btn__text">Read more</span><span class="btn__icon"></span></a>			
+							   <a href="/science" class="btn"><span class="btn__text">Read more</span><span class="btn__icon"></span></a>			
 							   <div class="share-btns-main">
 								  <i class="material-icons share-main-icon">share</i>
 							   </div>
@@ -144,7 +144,7 @@
 							   <div class="content-wrapper">
 								  <header class="entry-header">
 									 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-426x327.jpg" alt=""></a>
-									 <div class="post__cats"><a href="/business/">Business</a></div>
+									 <div class="post__cats"><a href="/science/">science</a></div>
 									 <div class="carousel--inner">
 										<div class="entry-content">
 										   <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/" rel="bookmark">Terrorism concerns get UK tourists opting in to ‘lighter’...</a></h5>
@@ -165,7 +165,7 @@
 							   <div class="content-wrapper">
 								  <header class="entry-header">
 									 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-426x327.jpg" alt=""></a>
-									 <div class="post__cats"><a href="/business/">Business</a><a href="/politics/">Politics</a></div>
+									 <div class="post__cats"><a href="/science/">science</a><a href="/politics/">Politics</a></div>
 									 <div class="carousel--inner">
 										<div class="entry-content">
 										   <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/" rel="bookmark">Iran nuclear deal makes country so much richer</a></h5>
@@ -186,7 +186,7 @@
 							   <div class="content-wrapper">
 								  <header class="entry-header">
 									 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/3312-426x327.jpg" alt=""></a>
-									 <div class="post__cats"><a href="/business/">Business</a></div>
+									 <div class="post__cats"><a href="/science/">science</a></div>
 									 <div class="carousel--inner">
 										<div class="entry-content">
 										   <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/" rel="bookmark">Among 1M refugees, Berlin accepted ISIS terrorists</a></h5>
@@ -270,7 +270,7 @@
 							   <div class="content-wrapper">
 								  <header class="entry-header">
 									 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-14/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ct-illinois-budget-met-0104-20141231-426x327.jpg" alt=""></a>
-									 <div class="post__cats"><a href="/business/">Business</a></div>
+									 <div class="post__cats"><a href="/science/">science</a></div>
 									 <div class="carousel--inner">
 										<div class="entry-content">
 										   <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-14/" rel="bookmark">Illinois budget fix: Just leave bills ignored and unpaid</a></h5>
@@ -311,7 +311,7 @@
 				   <h4 class="widget-title">Get latest news delivered daily!</h4>
 				   <div class="subscribe-block__message">We will send you breaking news right to your inbox</div>
 				   <form method="POST" action="" class="subscribe-block__form">
-					  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="2f2bd0c13b"><input type="hidden" name="_wp_http_referer" value="/wordpress_58404_v4/category/politics/">
+					  <input type="hidden" id="king_news_subscribe" name="king_news_subscribe" value="2f2bd0c13b"><input type="hidden" name="_wp_http_referer" value="/science/">
 					  <div class="subscribe-block__input-group"><input class="subscribe-block__input" type="email" name="subscribe-mail" value="" placeholder="Your e-mail"><a href="/" class="subscribe-block__submit btn">Subscribe</a></div>
 					  <div class="subscribe-block__messages">
 						 <div class="subscribe-block__success hidden">You successfully subscribed</div>
@@ -385,7 +385,7 @@
 					  <figure class="widget-image-grid__inner" style="margin: 0 0 30px 30px;">
 						 <img width="536" height="411" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-536x411.jpg" class="attachment-_tm-thumb-536-411 size-_tm-thumb-536-411 wp-post-image" alt="london22" srcset="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-536x411.jpg 536w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-238x182.jpg 238w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-150x115.jpg 150w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-337x258.jpg 337w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-426x327.jpg 426w" sizes="(max-width: 536px) 100vw, 536px">		
 						 <figcaption class="widget-image-grid__content">
-							<div class="post__cats"><a href="/business/" rel="category tag">Business</a></div>
+							<div class="post__cats"><a href="/science/" rel="category tag">science</a></div>
 							<div></div>
 							<div class="widget-image-grid__content-2">
 							   <h3 class="widget-image-grid__title">
@@ -414,7 +414,7 @@
 					  <figure class="widget-image-grid__inner" style="margin: 0 0 30px 30px;">
 						 <img width="536" height="411" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-536x411.jpg" class="attachment-_tm-thumb-536-411 size-_tm-thumb-536-411 wp-post-image" alt="Negotiations_about_Iranian_Nuclear_Program" srcset="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-536x411.jpg 536w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-238x182.jpg 238w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-150x115.jpg 150w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-337x258.jpg 337w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-426x327.jpg 426w" sizes="(max-width: 536px) 100vw, 536px">		
 						 <figcaption class="widget-image-grid__content">
-							<div class="post__cats"><a href="/business/" rel="category tag">Business</a> <a href="/politics/" rel="category tag">Politics</a></div>
+							<div class="post__cats"><a href="/science/" rel="category tag">science</a> <a href="/politics/" rel="category tag">Politics</a></div>
 							<div></div>
 							<div class="widget-image-grid__content-2">
 							   <h3 class="widget-image-grid__title">
@@ -544,7 +544,7 @@
 				   <div id="news-smart-box-5f7089efdedca" class="news-smart-box__instance layout_type_1" data-uniq-id="news-smart-box-5f7089efdedca">
 					  <div class="news-smart-box__navigation">
 						 <div class="current-term">
-							<span>Business</span>
+							<span>science</span>
 							<div class="nsb-spinner">
 							   <div class="double-bounce-1"></div>
 							   <div class="double-bounce-2"></div>
@@ -560,7 +560,7 @@
 									 <figure class="widget-new-smart-main">
 										<a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><img class="smart-box-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-536x411.jpg" alt=""></a>
 										<figcaption>
-										   <div class="post__cats"><a href="/business/">Business</a></div>
+										   <div class="post__cats"><a href="/science/">science</a></div>
 										   <div></div>
 										   <div class="widget-new-smart__footer">
 											  <h3 class="widget-new-smart__title">

@@ -29,7 +29,7 @@ export async function get(req, res) {
 
   var collection = await db.collection('sources')
   
-  collection.find({ "category": "Politics" }).toArray((err, result) => {
+  collection.find({ "category": "Culture" }).toArray((err, result) => {
     // result = result.sort(function(a, b) {
     //   return (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0);
     // });

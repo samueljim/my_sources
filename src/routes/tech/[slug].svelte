@@ -2,7 +2,7 @@
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await this.fetch(`politics/${params.slug}.json`);
+		const res = await this.fetch(`tech/${params.slug}.json`);
 		const data = await res.json();
 
 		if (res.status === 200) {
@@ -257,7 +257,7 @@
                            <div class="content-wrapper">
                               <header class="entry-header">
                                  <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-426x327.jpg" alt=""></a>
-                                 <div class="post__cats"><a href="/business/">Business</a></div>
+                                 <div class="post__cats"><a href="/tech/">tech</a></div>
                                  <div class="carousel--inner">
                                     <div class="entry-content">
                                        <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/" rel="bookmark">Terrorism concerns get UK tourists opting in to &#8216;lighter&#8217;...</a></h5>
@@ -273,48 +273,7 @@
                            </div>
                         </div>
                      </article>
-                     <article class="swiper-slide post hentry">
-                        <div class="inner">
-                           <div class="content-wrapper">
-                              <header class="entry-header">
-                                 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-426x327.jpg" alt=""></a>
-                                 <div class="post__cats"><a href="/business/">Business</a><a href="/politics/">Politics</a></div>
-                                 <div class="carousel--inner">
-                                    <div class="entry-content">
-                                       <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-21/" rel="bookmark">Iran nuclear deal makes country so much richer</a></h5>
-                                    </div>
-                                    <footer class="entry-footer">
-                                       <div class="entry-meta">
-                                          <span class="post__date">
-                                          </span>
-                                       </div>
-                                    </footer>
-                                 </div>
-                              </header>
-                           </div>
-                        </div>
-                     </article>
-                     <article class="swiper-slide post hentry">
-                        <div class="inner">
-                           <div class="content-wrapper">
-                              <header class="entry-header">
-                                 <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/3312-426x327.jpg" alt=""></a>
-                                 <div class="post__cats"><a href="/business/">Business</a></div>
-                                 <div class="carousel--inner">
-                                    <div class="entry-content">
-                                       <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-22/" rel="bookmark">Among 1M refugees, Berlin accepted ISIS terrorists</a></h5>
-                                    </div>
-                                    <footer class="entry-footer">
-                                       <div class="entry-meta">
-                                          <span class="post__date">
-                                          </span>
-                                       </div>
-                                    </footer>
-                                 </div>
-                              </header>
-                           </div>
-                        </div>
-                     </article>
+      
                      <article class="swiper-slide post hentry">
                         <div class="inner">
                            <div class="content-wrapper">
@@ -383,7 +342,7 @@
                            <div class="content-wrapper">
                               <header class="entry-header">
                                  <a class="post-thumbnail__link" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-14/"><img class="swiper-image" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ct-illinois-budget-met-0104-20141231-426x327.jpg" alt=""></a>
-                                 <div class="post__cats"><a href="/business/">Business</a></div>
+                                 <div class="post__cats"><a href="/tech/">tech</a></div>
                                  <div class="carousel--inner">
                                     <div class="entry-content">
                                        <h5 class="entry-title"><a href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-14/" rel="bookmark">Illinois budget fix: Just leave bills ignored and unpaid</a></h5>
@@ -498,7 +457,7 @@
                   <figure class="widget-image-grid__inner" style="margin: 0 0 30px 30px;">
                      <img width="536" height="411" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-536x411.jpg" class="attachment-_tm-thumb-536-411 size-_tm-thumb-536-411 wp-post-image" alt="london22" srcset="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-536x411.jpg 536w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-238x182.jpg 238w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-150x115.jpg 150w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-337x258.jpg 337w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-426x327.jpg 426w" sizes="(max-width: 536px) 100vw, 536px" />		
                      <figcaption class="widget-image-grid__content">
-                        <div class="post__cats"><a href="/business/" rel="category tag">Business</a></div>
+                        <div class="post__cats"><a href="/tech/" rel="category tag">tech</a></div>
                         <div></div>
                         <div class="widget-image-grid__content-2">
                            <h3 class="widget-image-grid__title">
@@ -527,7 +486,7 @@
                   <figure class="widget-image-grid__inner" style="margin: 0 0 30px 30px;">
                      <img width="536" height="411" src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-536x411.jpg" class="attachment-_tm-thumb-536-411 size-_tm-thumb-536-411 wp-post-image" alt="Negotiations_about_Iranian_Nuclear_Program" srcset="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-536x411.jpg 536w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-238x182.jpg 238w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-150x115.jpg 150w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-337x258.jpg 337w, https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/Negotiations_about_Iranian_Nuclear_Program-426x327.jpg 426w" sizes="(max-width: 536px) 100vw, 536px" />		
                      <figcaption class="widget-image-grid__content">
-                        <div class="post__cats"><a href="/business/" rel="category tag">Business</a> <a href="/politics/" rel="category tag">Politics</a></div>
+                        <div class="post__cats"><a href="/tech/" rel="category tag">tech</a> <a href="/tech/" rel="category tag">tech</a></div>
                         <div></div>
                         <div class="widget-image-grid__content-2">
                            <h3 class="widget-image-grid__title">
