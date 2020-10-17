@@ -1,23 +1,54 @@
-import posts from './_posts.js';
-var moment = require('moment'); 
+const moment = require('moment'); 
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb+srv://admin:uF8pZhQhraHJGu2Q@cluster0.vruoi.mongodb.net/news?retryWrites=true&w=majority";
 
-const contents = JSON.stringify(
-  posts.map(post => {
-    return {
-      title: post.title,
-      slug: post.slug,
-      author: post.author,
-      description: post.description,
-      image: post.image,
-      date: moment(post.date).fromNow() || "2 hours ago"
-    };
+let cachedDb = null
+
+// A function for connecting to MongoDB,
+// taking a single paramater of the connection string
+async function connectToDatabase(uri) {
+	// If the database connection is cached,
+	// use it instead of creating a new connection
+	if (cachedDb) {
+	  return cachedDb
+	}
+	// If no connection is cached, create a new one
+	const client = await MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true  })
+  
+	// Select the database through the connection,
+	// using the database path of the connection string
+	const db = await client.db('news')
+  
+	// Cache the database connection and return the connection
+	cachedDb = db
+	return db
+}
+
+export async function get(req, res) {
+  var db = await connectToDatabase(url)
+
+  var collection = await db.collection('sources')
+  
+  collection.find({ "category": "Politics" }).toArray((err, result) => {
+    if (err) {
+      console.log(err)
+      res.writeHead(404, {
+        'Content-Type': 'application/json'
+      });
+  
+      res.end(JSON.stringify({
+        message: `Not found`
+      }));
+    } else {
+      console.log(result)
+      res.writeHead(200, {
+        'Content-Type': 'application/json'
+      });
+      result = result.map(el => {
+        el.date = el.date ? moment(el.date).fromNow() : "2 hours ago"
+        return el;
+      })
+      res.end(JSON.stringify(result))
+    }
   })
-);
-
-export function get(req, res) {
-  res.writeHead(200, {
-    'Content-Type': 'application/json',
-  });
-
-  res.end(contents);
 }

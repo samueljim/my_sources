@@ -100,7 +100,7 @@
 		  <!-- #primary -->
 		  <aside id="sidebar-primary" class="col-xs-12 col-md-4 sidebar-primary widget-area" role="complementary">
 			 <aside id="search-4" class="widget widget_search">
-				<h4 class="widget-title">Blog Search</h4>
+				<h4 class="widget-title">News Search</h4>
 				<form role="search" method="get" class="search-form" action="https://ld-wp.template-help.com/wordpress_58404_v4/">
 				   <label>
 				   <span class="screen-reader-text">Search for:</span>

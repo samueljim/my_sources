@@ -63,9 +63,6 @@
 
 					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/">Terrorism concerns get UK tourists opting in to ‘lighter’ holiday spots</a>		
 					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-		
-		
-		
 			</div>
 </div>
 </div></div>
