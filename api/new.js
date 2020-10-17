@@ -1,4 +1,3 @@
-const moment = require('moment'); 
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.mongo;
 
@@ -24,30 +23,9 @@ async function connectToDatabase(uri) {
 	return db
 }
 
-export async function get(req, res) {
-  var db = await connectToDatabase(url)
+module.exports = (req, res) => {
+    const { title } = req.body
 
-  var collection = await db.collection('sources')
-  
-  collection.find({ "category": "Politics" }).toArray((err, result) => {
-    if (err) {
-      console.log(err)
-      res.writeHead(404, {
-        'Content-Type': 'application/json'
-      });
-  
-      res.end(JSON.stringify({
-        message: `Not found`
-      }));
-    } else {
-      res.writeHead(200, {
-        'Content-Type': 'application/json'
-      });
-      result = result.map(el => {
-        el.date = el.date ? moment(el.date).fromNow() : "2 hours ago"
-        return el;
-      })
-      res.end(JSON.stringify(result))
-    }
-  })
+
+    res.status(200).send(`Page will be created soon`)
 }
