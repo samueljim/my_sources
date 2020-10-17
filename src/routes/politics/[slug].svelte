@@ -25,11 +25,15 @@
 	<title>{post.title}</title>
 	<meta name="title" content="{post.title}">
 	<meta name="description" content="{post.description}">
+	<meta name="keywords" content="{post.tags}">
+   <meta name="author" content="{post.author}">
 
 	<!-- Open Graph / Facebook -->
-	<meta property="og:type" content="website">
+	<meta property="og:type" content="article">
+   <meta property="og:title" content="{post.title}" />
 	<meta property="og:description" content="{post.description}">
 	<meta property="og:image" content="{post.image}">
+	<meta property="og:locale" content="en_AU">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
