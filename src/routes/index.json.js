@@ -29,7 +29,7 @@ export async function get(req, res) {
 
   var collection = await db.collection('sources')
   
-  collection.find({}).sort({_id:1}).limit(5).toArray((err, result) => {
+  collection.find({}).sort({date:-1}).limit(5).toArray((err, result) => {
     // result = result.sort(function(a, b) {
     //   return (a.date < b.date) ? -1 : ((a.date > b.date) ? 1 : 0);
     // });

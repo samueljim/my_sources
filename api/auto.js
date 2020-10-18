@@ -79,7 +79,7 @@ async function connectToDatabase(uri) {
 	cachedDb = db
 	return db
 }
-
+let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
     console.log('auto')
     let d = new Date()
@@ -96,15 +96,16 @@ module.exports = async (req, res) => {
             const element = response[index];
             let c = t[index]
 
-        console.log(element.articles[0].title)
+        let title = element.articles[0].title.split('-')[0]
+        console.log(title)
         var randomName = faker.name.findName();
         const myobj = {
-            title: element.articles[0].title,
-            slug: string_to_slug(element.articles[0].title),
+            title: title,
+            slug: string_to_slug(title),
             category: c,
             author: randomName,
             date: iso,
-            image: "https://picsum.photos/300/180"
+            image: "https://picsum.photos/"+ s[Math.floor(Math.random() * s.length)]
         }
 
  
@@ -120,6 +121,11 @@ module.exports = async (req, res) => {
             
             });
         }
+
+        request.get({
+            url: 'http://sources.now.sh/api/ai',
+        });
+
         res.send(`Done`)
 
     }, function(error){
