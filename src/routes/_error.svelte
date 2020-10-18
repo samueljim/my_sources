@@ -6,6 +6,9 @@
 </script>
 
 <style>
+.error {
+	  text-align: center;
+}
 	h1, p {
 		margin: 0 auto;
 	}
@@ -19,7 +22,9 @@
 	p {
 		margin: 1em auto;
 	}
-
+pre {
+	text-align: left;
+}
 	@media (min-width: 480px) {
 		h1 {
 			font-size: 4em;
@@ -30,11 +35,12 @@
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
+<div class="error">
+	<h1>{status}</h1>
 
-<h1>{status}</h1>
+	<p>{error.message}</p>
 
-<p>{error.message}</p>
-
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}
+	{#if dev && error.stack}
+		<pre>{error.stack}</pre>
+	{/if}
+</div>
