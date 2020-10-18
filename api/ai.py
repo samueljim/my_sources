@@ -11,7 +11,8 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
 
         fill_empties()
-        requests.get(os.environ.get("rebuild"))
+        endpoint = requests.get(os.environ.get("rebuild"))
+        requests.get(endpoint)
 
         content = "done"
 
