@@ -72,10 +72,10 @@ module.exports = async (req, res) => {
                         if (err) {
                             res.status(500).send(`Error making page`); 
                         } else {
-                            res.redirect('https://sources.now.sh/thanks');
+                            // res.redirect('https://sources.now.sh/thanks');
                             res.send(`Page will be made shortly`); 
                         }
-                        db.close();
+                        // db.close();
                     });
                 } else {
                     res.status(500).send(`This page already exists`); 

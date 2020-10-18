@@ -89,7 +89,7 @@ module.exports = async (req, res) => {
     var collection = await db.collection('sources')
 
     combinePromises()
-    .then(function(response) {
+    .then(async function(response) {
 
       let t = ['Politics', 'Business', 'Science', 'Cultrue', 'Tech', 'World']
         for (let index = 0; index < response.length; index++) {
@@ -97,7 +97,6 @@ module.exports = async (req, res) => {
             let c = t[index]
 
         let title = element.articles[0].title.split('-')[0]
-        console.log(title)
         var randomName = faker.name.findName();
         const myobj = {
             title: title,
@@ -107,32 +106,28 @@ module.exports = async (req, res) => {
             date: iso,
             image: "https://picsum.photos/"+ s[Math.floor(Math.random() * s.length)]
         }
-
- 
-
-        collection.findOne({"slug": myobj.slug}, function(err, doc) {
-            if (err) throw err;
-
+        console.log(myobj)
+        try {
+            let doc = await collection.findOne({"slug": myobj.slug})
+            console.log(doc)
             if (!doc || doc.length === 0) {
-                collection.insertOne(myobj, function(err, res) {
-                });
+                let created = await collection.insertOne(myobj)
             } else {
+                console.log(title + " could not be mades")                    
             }
-            
-            });
+        } catch (error) {
+            console.log(error)                    
         }
-
+        
+    }
         request.get({
             url: 'http://sources.now.sh/api/ai',
         });
-
         res.send(`Done`)
-
     }, function(error){
         //do something with error here
         console.log(error)
         res.send(`Error`)
-
     });
     
 }
