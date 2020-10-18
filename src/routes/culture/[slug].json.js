@@ -2,6 +2,7 @@ const moment = require('moment');
 const MongoClient = require('mongodb').MongoClient;
 const url = process.env.mongo;
 const Autolinker = require( 'autolinker' );
+var keyword_extractor = require("keyword-extractor");
 
 let cachedDb = null
 function text2HTML(text) {
@@ -69,7 +70,20 @@ export async function get(req, res, next) {
 			result[0].date =  result[0].date ? moment(result[0].date).fromNow() : "2 hours ago"
 			if (result[0].html) {
 				result[0].html = text2HTML(Autolinker.link( result[0].html ));
-			} else {
+				var extraction_result = keyword_extractor.extract(result[0].html,{
+					language:"english",
+					remove_digits: true,
+					return_changed_case:false,
+					return_chained_words: true,
+					remove_duplicates: false,
+			   });
+			   let links =  []
+			   for (let index = 0; index < 10; index++) {
+				  links.push(extraction_result[Math.floor(Math.random()*extraction_result.length)]);
+			   }
+			links.forEach(element => {
+				result[0].html = result[0].html.replace(element, `<a href='https://www.youtube.com/watch?v=oHg5SJYRHA0'>${element}</a>`)
+			   });			} else {
 				result[0].html = `<h2>There's more to this story </h2><h3>But it's a member-only story. Subscribe today to unlock it and more...</h3><div class="hero-offer-details style-scope caas-hero-offer-details-base">
 				<br>
 				<p class="hero-offer-title style-scope caas-hero-offer-details-base">FULL DIGITAL ACCESS, <em>$1 PER WEEK FOR THE FIRST 12 WEEKS </em></p>
