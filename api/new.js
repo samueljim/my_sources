@@ -41,7 +41,7 @@ async function connectToDatabase(uri) {
 	cachedDb = db
 	return db
 }
-
+let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
     console.log('runs')
     let d = new Date()
@@ -57,7 +57,7 @@ module.exports = async (req, res) => {
                 category: category,
                 author: randomName,
                 date: iso,
-                image: "https://picsum.photos/300/180"
+                image: "https://picsum.photos/"+ s[Math.floor(Math.random() * s.length)]
             }
 
             var db = await connectToDatabase(url);
@@ -68,12 +68,12 @@ module.exports = async (req, res) => {
                 if (err) throw err;
 
                 if (!doc || doc.length === 0) {
-                    collection.insertOne(myobj, function(err, res) {
+                    collection.insertOne(myobj, function(err, sdsdds) {
                         if (err) {
                             res.status(500).send(`Error making page`); 
                         } else {
-                            res.status(500).send(`Page will be made shortly`); 
-                            // res.redirect('https://sources.now.sh/thanks');
+                            res.redirect('https://sources.now.sh/thanks');
+                            res.send(`Page will be made shortly`); 
                         }
                         db.close();
                     });
