@@ -1,21 +1,23 @@
-# Sapper Example
+# make your own news using ai and win an argument online.
 
-This directory is a brief example of a [Sapper](https://sapper.svelte.dev/) app that can be deployed with Vercel and zero configuration.
+Nobody ever reads news. They just skim read and believe the headline. 
+We have written a system that takes user submitted headlines and turns them into legitimate but clearly fake news stories
 
-## Deploy Your Own
+Check out the site at one of the following domains
 
-Deploy your own Sapper project with Vercel.
+https://Kingnews.now.sh
+https://News-now.now.sh 
+https://now-news.now.sh
+https://Realfact.now.sh 
+https://Theverge.now.sh 
+https://King-news.now.sh 
+https://Newscience.now.sh 
+https://Sciencenews.now.sh 
+https://Sciencenewsforstudents.now.sh 
+https://Theguardian.now.sh 
+https://Cnet.now.sh
+https://Thenewdaily.now.sh
+https://Techradar.now.sh
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/sapper)
+The new stories will be made by an agent that runs daily. 
 
-_Live Example: https://sapper.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with Sapper deployed with Vercel, you can use [degit](https://github.com/Rich-Harris/degit) to initialize the project:
-
-```shell
-$ npx degit "sveltejs/sapper-template#webpack" my-sapper-app
-```
-
-> The only change made is to change the build script in `package.json` to be `"sapper export"`.
