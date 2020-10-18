@@ -1,0 +1,5 @@
+transformers
+python-dotenv
+pymongo
+textblob
+nltk
