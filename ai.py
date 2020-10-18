@@ -10,15 +10,15 @@ from gen.genlib import fill_empties, Post
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
 
-        # fill_empties()
-        # endpoint = requests.get(os.environ.get("rebuild"))
-        # requests.get(endpoint)
+        fill_empties()
+        endpoint = requests.get(os.environ.get("rebuild"))
+        requests.get(endpoint)
 
-        # content = "done"
+        content = "done"
 
-        # # post = Post(title="fake news is good. here are 10 reasons why.")
-        # # post.fill_nones()
-        # # content = post.to_dict()
+        # post = Post(title="fake news is good. here are 10 reasons why.")
+        # post.fill_nones()
+        # content = post.to_dict()
 
         self.send_response(200)
         self.send_header("Content-type", "text/plain")

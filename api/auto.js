@@ -121,7 +121,7 @@ module.exports = async (req, res) => {
         
     }
         request.get({
-            url: 'http://sources.now.sh/api/ai',
+            url: process.env.rebuild,
         });
         res.send(`Done`)
     }, function(error){
