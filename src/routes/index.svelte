@@ -1,71 +1,57 @@
+<script context="module">
+	export function preload({ params, query }) {
+		return this.fetch(`index.json`).then(r => r.json()).then(posts => {
+			return { featured: posts[0], posts: [posts[1], posts[2], posts[3], posts[4],] };
+		});
+	}
+</script>
+
+<script>
+	export let featured;
+	export let posts;
+</script>
 <svelte:head>
-	<title>Epic news</title>
+	<title>{featured.title}</title>
+
+	<meta name="title" content="{featured.title}">
+	<meta name="description" content="{featured.description}">
+	<meta name="keywords" content="{featured.tags ? featured.tags.join(',') : 'news'}">
+   <meta name="author" content="{featured.author}">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="article">
+   <meta property="og:title" content="{featured.title}" />
+	<meta property="og:description" content="{featured.description}">
+	<meta property="og:image" content="{featured.image}">
+	<meta property="og:locale" content="en_AU">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:description" content="{featured.description}">
+	<meta property="twitter:image" content="{featured.image}">
+
 </svelte:head>
-<div id="content" class="site-content container">
-<aside id="widget-featured-posts-block-2" class="widget widget-featured-posts-block"><div class="tm_fpblock__wrapper">
-	<div class="tm_fpblock tm_fpblock-layout-2"><div class="tm_fpblock__item tm_fpblock__item-1 post-1851 tm_fpblock__item-large">
-
-	<div class="tm_fpblock__item__preview" style="background-image: url('https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/04.10.14_Obama-1024x682.jpg');"><img src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/04.10.14_Obama-1024x682.jpg" alt="obama"></div>
-			<div class="tm_fpblock__item__categories"> <a href="https://ld-wp.template-help.com/wordpress_58404_v4/category/world/" class="tm_fpblock__item__category">World</a> </div>	
-	<div class="tm_fpblock__item__description">
-
-					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-18/">If Obama Had Ruled Like This in 2009, He’d Be the Reforming President We All Hoped For</a>		
-					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-18/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-		
-		
-		
+<div class="site-content container" id="content">
+	<aside class="widget widget-featured-posts-block" id="widget-featured-posts-block-2">
+		<div class="tm_fpblock__wrapper">
+			<div class="tm_fpblock__item tm_fpblock__item-2 post-1818 tm_fpblock__item-small" style="height: 323.5px;     width: 100%;">
+				<div class="tm_fpblock__item__preview" style="background-image: url('{featured.image}'); height: 323.5px;     width: 100%;"><img src="{featured.image}" alt="tempfile" style="height: 323.5px;     width: 100%;"></div>
+						<div class="tm_fpblock__item__categories"> <a href="/{featured.category.toLowerCase()}" class="tm_fpblock__item__category">{featured.category}</a> </div>	
+				<div class="tm_fpblock__item__description">
+					<a class="tm_fpblock__item__title" style="font-size: 1.6em;" href="/{featured.category.toLowerCase()}/{featured.slug}">{featured.title}</a>		
+					<a class="tm_fpblock__item__date" href="/{featured.category.toLowerCase()}/{featured.slug}"><i class="material-icons dp18">access_time</i> {featured.date}</a>		
+				</div>
 			</div>
-</div>
-<div class="tm_fpblock__item tm_fpblock__item-2 post-1818 tm_fpblock__item-small" style="height: 223.5px;">
-
-	<div class="tm_fpblock__item__preview" style="background-image: url(&quot;https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker-1024x743.jpg&quot;); height: 223.5px;"><img src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/0203417001453934488_filepicker-1024x743.jpg" alt="tempfile" style="height: 223.5px;"></div>
-			<div class="tm_fpblock__item__categories"> <a href="https://ld-wp.template-help.com/wordpress_58404_v4/category/sports/" class="tm_fpblock__item__category">Sports</a> </div>	
-	<div class="tm_fpblock__item__description">
-
-					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for/">Are the Clippers better off without Blake Griffin?</a>		
-					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-		
-		
-		
+			{#each posts as post}
+			<div class="tm_fpblock__item tm_fpblock__item-2 post-1818 tm_fpblock__item-small" style="height: 223.5px;">
+				<div class="tm_fpblock__item__preview" style="background-image: url('{post.image}'); height: 223.5px;"><img src="{post.image}" alt="tempfile" style="height: 223.5px;"></div>
+						<div class="tm_fpblock__item__categories"> <a href="/{post.category.toLowerCase()}" class="tm_fpblock__item__category">{post.category}</a> </div>	
+				<div class="tm_fpblock__item__description">
+					<a class="tm_fpblock__item__title" href="/{post.category.toLowerCase()}/{post.slug}">{post.title}</a>		
+					<a class="tm_fpblock__item__date" href="/{post.category.toLowerCase()}/{post.slug}"><i class="material-icons dp18">access_time</i> {post.date}</a>		
+				</div>
 			</div>
-</div>
-<div class="tm_fpblock__item tm_fpblock__item-3 post-1848 tm_fpblock__item-small" style="height: 223.5px;">
-
-	<div class="tm_fpblock__item__preview" style="background-image: url(&quot;https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ap-trump-carson-cruz-1024x683.jpg&quot;); height: 223.5px;"><img src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ap-trump-carson-cruz-1024x683.jpg" alt="trump" style="height: 223.5px;"></div>
-			<div class="tm_fpblock__item__categories"> <a href="https://ld-wp.template-help.com/wordpress_58404_v4/category/news/" class="tm_fpblock__item__category">News</a> </div>	
-	<div class="tm_fpblock__item__description">
-
-					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/">Two Loser Idaho Pot Smugglers Freak Out, Call 911 on Themselves</a>		
-					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-16/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-		
-		
-		
-			</div>
-</div>
-<div class="tm_fpblock__item tm_fpblock__item-4 post-2024 tm_fpblock__item-small" style="height: 223.5px;">
-
-	<div class="tm_fpblock__item__preview" style="background-image: url(&quot;https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ibm-says-hackers-can-hijack-your-online-dating-profiles-and-pretend-to-be-you-1024x768.jpg&quot;); height: 223.5px;"><img src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/ibm-says-hackers-can-hijack-your-online-dating-profiles-and-pretend-to-be-you-1024x768.jpg" alt="dating" style="height: 223.5px;"></div>
-			<div class="tm_fpblock__item__categories"> <a href="https://ld-wp.template-help.com/wordpress_58404_v4/category/media/" class="tm_fpblock__item__category">Media</a> </div>	
-	<div class="tm_fpblock__item__description">
-
-					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/post-audio-format/">Bill Maher &amp; Macfarlene: ‘Serial Anti-Catholic Bigots’ – Catholic League</a>		
-					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/post-audio-format/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-		
-		
-		
-			</div>
-</div>
-<div class="tm_fpblock__item tm_fpblock__item-5 post-1852 tm_fpblock__item-small" style="height: 223.5px;">
-
-	<div class="tm_fpblock__item__preview" style="background-image: url(&quot;https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-1024x576.jpg&quot;); height: 223.5px;"><img src="https://ld-wp.template-help.com/wordpress_58404_v4/wp-content/uploads/2016/02/london22-1024x576.jpg" alt="london" style="height: 223.5px;"></div>
-			<div class="tm_fpblock__item__categories"> <a href="https://ld-wp.template-help.com/wordpress_58404_v4/category/business/" class="tm_fpblock__item__category">Business</a> </div>	
-	<div class="tm_fpblock__item__description">
-
-					<a class="tm_fpblock__item__title" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/">Terrorism concerns get UK tourists opting in to ‘lighter’ holiday spots</a>		
-					<a class="tm_fpblock__item__date" href="https://ld-wp.template-help.com/wordpress_58404_v4/if-obama-had-ruled-like-this-in-2009-hed-be-the-reforming-president-we-all-hoped-for-20/"><i class="material-icons dp18">access_time</i> 5 years ago</a>		
-			</div>
-</div>
-</div></div>
-</aside>
-
+			{/each}
+		</div>
+	</aside>
 </div>
