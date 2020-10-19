@@ -5,19 +5,32 @@ We have written a system that takes user submitted headlines and turns them into
 
 Check out the site at one of the following domains
 
-https://Kingnews.now.sh
-https://News-now.now.sh 
+https://kingnews.now.sh
+
+https://news-now.now.sh 
+
 https://now-news.now.sh
-https://Realfact.now.sh 
-https://Theverge.now.sh 
-https://King-news.now.sh 
-https://Newscience.now.sh 
-https://Sciencenews.now.sh 
-https://Sciencenewsforstudents.now.sh 
-https://Theguardian.now.sh 
-https://Cnet.now.sh
-https://Thenewdaily.now.sh
-https://Techradar.now.sh
+
+https://realfact.now.sh 
+
+https://theverge.now.sh 
+
+https://king-news.now.sh 
+
+https://newscience.now.sh 
+
+https://sciencenews.now.sh 
+
+https://sciencenewsforstudents.now.sh
+
+https://theguardian.now.sh 
+
+https://cnet.now.sh
+
+https://thenewdaily.now.sh
+
+https://techradar.now.sh
+
 
 The new stories will be made by an agent that runs daily. 
 
