@@ -104,10 +104,10 @@ def fill_empties():
         to_fill.fill_nones()
         collection.update_one({"_id": to_fill._id}, {"$set": to_fill.to_dict()})
     
-    r = requests.get("https://sources.now.sh/api/auto")
-    # r = requests.get(os.environ.get("rebuild"))
+    r = requests.get(os.environ.get("rebuild"))
   
     logging.warning('  Rebuilding site with new content 😀  ')
 
 if __name__ == "__main__":
+    r = requests.get("https://sources.now.sh/api/auto")
     fill_empties()

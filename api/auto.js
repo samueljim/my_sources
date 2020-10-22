@@ -127,9 +127,9 @@ module.exports = async (req, res) => {
         }
         
     }
-    request(process.env.rebuild, function (error, response, body) {
-      res.send(`Done`)
-    });
+    res.send(`Done`)
+    // request(process.env.rebuild, function (error, response, body) {
+    // });
         
         
     }, function(error){
