@@ -99,13 +99,15 @@ class Post:
 
 def fill_empties():
     for empty in collection.find({"description": None}):
-        print(empty)
+        # print(empty)
         to_fill = Post(**empty)
         to_fill.fill_nones()
         collection.update_one({"_id": to_fill._id}, {"$set": to_fill.to_dict()})
     
-    r = requests.get(os.environ.get("rebuild"))
-    logging.warning('  Rebuilding site with new content 😀')
+    r = requests.get("https://sources.now.sh/api/auto")
+    # r = requests.get(os.environ.get("rebuild"))
+  
+    logging.warning('  Rebuilding site with new content 😀  ')
 
 if __name__ == "__main__":
     fill_empties()

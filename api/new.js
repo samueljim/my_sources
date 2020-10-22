@@ -73,12 +73,12 @@ module.exports = async (req, res) => {
                             res.status(500).send(`Error making page`); 
                         } else {
                             // res.redirect('https://sources.now.sh/thanks');
-                            res.send(`Page will be made shortly`); 
+                            res.send(`<h2>Success! 🥳</h2><h3>This story will be writen when we have done the research.</h3><p>Check back in a few days to read your masterpiece of independent journalism</p><br><br><p>Feel free to close this tab</p>`); 
                         }
                         // db.close();
                     });
                 } else {
-                    res.status(500).send(`This page already exists`); 
+                    res.status(500).send(`This page already exists. Look for it on the site`); 
                 }
                
               });
