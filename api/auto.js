@@ -84,7 +84,6 @@ function randomDate(start, end) {
   return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
-≈
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
     console.log('auto')
