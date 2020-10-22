@@ -47,7 +47,7 @@ export async function get(req, res, next) {
 	// the `slug` parameter is available because
 	// this file is called [slug].json.js
 	const { slug } = req.params;
-	console.log(slug)
+	////console.log(slug)
 
 	var db = await connectToDatabase(url)
 

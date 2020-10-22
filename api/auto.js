@@ -86,7 +86,7 @@ function randomDate(start, end) {
 
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
-    console.log('auto')
+   // console.log('auto')
     // random date in the last 24 hours 
     let d = randomDate(new Date(new Date().getTime() - (24 * 60 * 60 * 1000)), new Date())
 
@@ -113,17 +113,17 @@ module.exports = async (req, res) => {
             date: iso,
             image: "https://picsum.photos/"+ s[Math.floor(Math.random() * s.length)]
         }
-        console.log(myobj)
+        //console.log(myobj)
         try {
             let doc = await collection.findOne({"slug": myobj.slug})
-            console.log(doc)
+            //console.log(doc)
             if (!doc || doc.length === 0) {
                 let created = await collection.insertOne(myobj)
             } else {
-                console.log(title + " could not be mades")                    
+                //console.log(title + " could not be mades")                    
             }
         } catch (error) {
-            console.log(error)                    
+            //console.log(error)                    
         }
         
     }

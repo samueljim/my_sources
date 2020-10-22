@@ -43,11 +43,11 @@ async function connectToDatabase(uri) {
 }
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
-    console.log('runs')
+    // .log('runs')
     let d = new Date()
     let iso = d.toISOString()
     const { title, category } = JSON.parse(JSON.stringify(req.body))
-    console.log(title)
+    // console.log(title)
     if (title && category) {
         if (title.length > 10 && title.length < 400 && category.length > 1) {
             var randomName = faker.name.findName();
