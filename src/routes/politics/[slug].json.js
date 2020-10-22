@@ -69,7 +69,7 @@ export async function get(req, res, next) {
 			});
 			result[0].date =  result[0].date ? moment(result[0].date).fromNow() : "2 hours ago"
 			if (result[0].html) {
-				result[0].html = text2HTML(Autolinker.link( result[0].html ));
+				result[0].html = text2HTML(result[0].html).replace('<div style="margin-bottom: 2em;"></div>');
 				var extraction_result = keyword_extractor.extract(result[0].html,{
 					language:"english",
 					remove_digits: true,
