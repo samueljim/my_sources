@@ -1,0 +1,15 @@
+transformers
+python-dotenv
+pymongo
+textblob
+nltk
+dataclasses
+typing
+pathlib
+datetime
+textblob
+faker
+pymongo
+torch
+dnspython
+punkt

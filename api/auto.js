@@ -79,13 +79,21 @@ async function connectToDatabase(uri) {
 	cachedDb = db
 	return db
 }
+
+function randomDate(start, end) {
+  return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
+≈
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
     console.log('auto')
-    let d = new Date()
+    // random date in the last 24 hours 
+    let d = randomDate(new Date(new Date().getTime() - (24 * 60 * 60 * 1000)), new Date())
+
     let iso = d.toISOString()
     var db = await connectToDatabase(url);
-
+    
     var collection = await db.collection('sources')
 
     combinePromises()

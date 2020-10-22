@@ -6,6 +6,7 @@ from datetime import datetime
 import random
 import json
 from pprint import pprint
+import logging
 
 from transformers import pipeline
 from textblob import TextBlob
@@ -31,12 +32,18 @@ collection = db.sources
 
 
 def generate_article_from_title(title: str) -> str:
-    article = generator(title, max_length=random.randint(500, 1500))[0][
-        "generated_text"
-    ]
-    if "." in article:
-        return article[article.index(".") + 1 :]
-    return article
+    try:
+        article = generator(title, max_length=random.randint(500, 1500))[0][
+            "generated_text"
+        ]
+        if "." in article:
+            return article[article.index(".") + 1 :]
+        return article
+        pass
+    except:
+        logging.warning('  Error making html')
+        return ""
+        pass
 
 
 def generate_summary_from_article(article: str) -> str:
@@ -74,6 +81,7 @@ class Post:
 
     def fill_nones(self):
         if self.html is None:
+            logging.warning('  Starting making html for: ' + self.title)
             self.html = generate_article_from_title(title=self.title)
         if self.description is None:
             self.description = generate_summary_from_article(article=self.html)
@@ -95,7 +103,9 @@ def fill_empties():
         to_fill = Post(**empty)
         to_fill.fill_nones()
         collection.update_one({"_id": to_fill._id}, {"$set": to_fill.to_dict()})
-
+    
+    r = requests.get(os.environ.get("rebuild"))
+    logging.warning('  Rebuilding site with new content 😀')
 
 if __name__ == "__main__":
     fill_empties()
