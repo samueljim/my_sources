@@ -68,7 +68,7 @@ export async function get(req, res, next) {
 			});
 			result[0].date =  result[0].date ? moment(result[0].date).fromNow() : "2 hours ago"
 			if (result[0].html) {
-								result[0].html = text2HTML(result[0].html).replace('<div style="margin-bottom: 2em;"></div>');
+								result[0].html = text2HTML(result[0].html).replace('<br>','<div style="margin-bottom: 2em;"></div>');
 
 			} else {
 				result[0].html = `<h2>There's more to this story </h2><h3>But it's a member-only story. Subscribe today to unlock it and more...</h3><div class="hero-offer-details style-scope caas-hero-offer-details-base">
