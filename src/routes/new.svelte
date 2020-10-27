@@ -15,12 +15,12 @@
 	}
 </style>
 <div id="content" class="site-content container" enctype='application/json'>
-	<h3>Give us a headline to write about</h3>
+	<h3>King news is no longer taking stoires</h3>
 	<form action="/api/new" method="post">
 	<label for="title">Title:</label>
-	<input type="text" id="title" name="title"><br><br>
+	<input disabled type="text" id="title" name="title"><br><br>
 	<label for="category">Category:</label>
-	<select name="category" id="category">
+	<select disabled name="category" id="category">
 		<option value="Business">Business</option>
 		<option value="Science">Science</option>
 		<option value="Politics">Politics</option>

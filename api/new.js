@@ -44,6 +44,8 @@ async function connectToDatabase(uri) {
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
     // .log('runs')
+    return res.send(`King news is no longer taking stories`)
+
     let d = new Date()
     let iso = d.toISOString()
     const { title, category } = JSON.parse(JSON.stringify(req.body))

@@ -86,6 +86,8 @@ function randomDate(start, end) {
 
 let s = ['300/180','300/150','330/200','200/120','400/280']
 module.exports = async (req, res) => {
+    return res.send(`King news is no longer taking stories`)
+
    // console.log('auto')
     // random date in the last 24 hours 
     let d = randomDate(new Date(new Date().getTime() - (24 * 60 * 60 * 1000)), new Date())
