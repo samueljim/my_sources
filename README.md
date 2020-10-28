@@ -31,6 +31,4 @@ https://thenewdaily.now.sh
 
 https://techradar.now.sh
 
-
-The new stories will be made by an agent that runs daily. 
-
+King news is no longer running for moral reasons 
